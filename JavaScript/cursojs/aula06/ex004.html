@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu quarto programa JV</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        body{
+            background-color: rgb(159, 159, 255);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color:rgb(235, 235, 0);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+        }
+        p{
+            font-size: 1.1em;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+   <script>
+    var nome =window.prompt('Qual seu nome ?')
+            document.writeln(`<p>Olá <strong>${nome}</strong>, seu nome tem ${nome.length} caracteres <br></p>`)
+            document.writeln(`<p>Seu nome em "MAIÚSCULO" fica: ${nome.toUpperCase()}<br></p>`)
+            document.write(`<p>Seu nome em minúsculo é: ${nome.toLowerCase()}</p>`)
+   </script>
+</body>
+</html>
