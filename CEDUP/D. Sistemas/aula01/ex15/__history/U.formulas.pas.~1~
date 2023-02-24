@@ -1,0 +1,31 @@
+unit U.formulas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_principal = class(TForm)
+    lb_a: TLabel;
+    txt_a: TEdit;
+    lb_b: TLabel;
+    txt_b: TEdit;
+    lb_c: TLabel;
+    txt_c: TEdit;
+    btn_calcular: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_principal: Tfrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+end.

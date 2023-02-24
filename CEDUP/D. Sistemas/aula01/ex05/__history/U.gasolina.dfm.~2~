@@ -1,0 +1,86 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 299
+  ClientWidth = 167
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -15
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 17
+  object lb_preco: TLabel
+    Left = 18
+    Top = 24
+    Width = 122
+    Height = 19
+    Caption = 'Pre'#231'o da gasolina:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_pagar: TLabel
+    Left = 19
+    Top = 96
+    Width = 116
+    Height = 19
+    Caption = 'Quanto pagar'#225' ?:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_litros: TLabel
+    Left = 19
+    Top = 168
+    Width = 122
+    Height = 19
+    Caption = 'Litros concedidos:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object txt_preco: TEdit
+    Left = 19
+    Top = 49
+    Width = 121
+    Height = 25
+    TabOrder = 0
+  end
+  object txt_pagar: TEdit
+    Left = 18
+    Top = 121
+    Width = 121
+    Height = 25
+    TabOrder = 1
+  end
+  object bt_calcular: TButton
+    Left = 19
+    Top = 248
+    Width = 75
+    Height = 25
+    Caption = 'Calcular'
+    TabOrder = 2
+    OnClick = bt_calcularClick
+  end
+  object txt_litros: TEdit
+    Left = 18
+    Top = 193
+    Width = 121
+    Height = 25
+    Enabled = False
+    TabOrder = 3
+  end
+end

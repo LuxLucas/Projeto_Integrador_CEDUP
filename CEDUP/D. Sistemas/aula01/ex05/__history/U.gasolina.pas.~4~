@@ -1,0 +1,59 @@
+unit U.gasolina;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  Tfrm_gasolina = class(TForm)
+    lb_preco: TLabel;
+    txt_preco: TEdit;
+    lb_pagar: TLabel;
+    txt_pagar: TEdit;
+    bt_calcular: TButton;
+    lb_litros: TLabel;
+    txt_litros: TEdit;
+    lb_cifra1: TLabel;
+    lb_cifra2: TLabel;
+    lb_l: TLabel;
+    btn_limpar: TButton;
+    procedure bt_calcularClick(Sender: TObject);
+    procedure btn_limparClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm_gasolina: Tfrm_gasolina;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm_gasolina.btn_limparClick(Sender: TObject);
+begin
+txt_preco.Clear;
+txt_pagar.Clear;
+txt_litros.Clear;
+txt_preco.SetFocus;
+
+end;
+
+procedure Tfrm_gasolina.bt_calcularClick(Sender: TObject);
+var
+preco,pagar,litros:double;
+begin
+
+preco:=StrToFloat(txt_preco.Text);
+pagar:=StrToFloat(txt_pagar.Text);
+
+litros:=  pagar/preco;
+txt_litros.Text:=FormatFloat('0.00',litros);
+
+end;
+
+end.

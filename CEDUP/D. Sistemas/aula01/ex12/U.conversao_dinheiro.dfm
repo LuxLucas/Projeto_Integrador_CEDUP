@@ -1,0 +1,126 @@
+object frm_principal: Tfrm_principal
+  Left = 0
+  Top = 0
+  Caption = 'Convertendo Money'
+  ClientHeight = 364
+  ClientWidth = 221
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -15
+  Font.Name = 'Times New Roman'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 17
+  object lb_reais: TLabel
+    Left = 32
+    Top = 32
+    Width = 42
+    Height = 17
+    Caption = 'Reais:'
+  end
+  object lb_real: TLabel
+    Left = 159
+    Top = 58
+    Width = 19
+    Height = 17
+    Caption = 'R$'
+  end
+  object lb_conversoes: TLabel
+    Left = 32
+    Top = 144
+    Width = 110
+    Height = 22
+    Caption = 'Convertendo:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lb_dolar: TLabel
+    Left = 32
+    Top = 176
+    Width = 56
+    Height = 17
+    Caption = 'D'#243'lares:'
+  end
+  object lb_uss: TLabel
+    Left = 159
+    Top = 202
+    Width = 27
+    Height = 17
+    Caption = 'US$'
+  end
+  object lb_euro: TLabel
+    Left = 32
+    Top = 232
+    Width = 37
+    Height = 17
+    Caption = 'Euro:'
+  end
+  object lb_e: TLabel
+    Left = 159
+    Top = 258
+    Width = 8
+    Height = 17
+    Caption = #8364
+  end
+  object lb_libra: TLabel
+    Left = 32
+    Top = 288
+    Width = 47
+    Height = 17
+    Caption = 'Libras:'
+  end
+  object lb_l: TLabel
+    Left = 159
+    Top = 314
+    Width = 8
+    Height = 17
+    Caption = #163
+  end
+  object txt_reais: TEdit
+    Left = 32
+    Top = 55
+    Width = 121
+    Height = 25
+    TabOrder = 0
+  end
+  object txt_dolar: TEdit
+    Left = 32
+    Top = 199
+    Width = 121
+    Height = 25
+    Enabled = False
+    TabOrder = 1
+  end
+  object txt_euro: TEdit
+    Left = 32
+    Top = 255
+    Width = 121
+    Height = 25
+    Enabled = False
+    TabOrder = 2
+  end
+  object txt_libra: TEdit
+    Left = 32
+    Top = 311
+    Width = 121
+    Height = 25
+    Enabled = False
+    TabOrder = 3
+  end
+  object btn_calcular: TButton
+    Left = 32
+    Top = 94
+    Width = 75
+    Height = 25
+    Caption = 'Calcular'
+    TabOrder = 4
+    OnClick = btn_calcularClick
+  end
+end

@@ -1,0 +1,47 @@
+unit U.Dias_passados;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    txtdia: TEdit;
+    txtmes: TEdit;
+    lbmes: TLabel;
+    lbdia: TLabel;
+    btcalcular: TButton;
+    procedure btcalcularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btcalcularClick(Sender: TObject);
+var
+dias,mes,qtd:integer;
+begin
+   dias:=strtoint(txtdia.text);
+   mes:=strtoint(txtmes.text);
+   if(dias > 30) or (dias < 1) or (mes < 1) or (mes > 12) then
+   begin
+     showmessage('[ERRO] Mês ou dia está/é inválido.');
+   end
+   else
+   begin
+     qtd:=((mes-1)*30)+dias;
+     showmessage('Já se passaram '+IntToStr(qtd)+' dias desde o início do ano.');
+   end;
+end;
+
+end.

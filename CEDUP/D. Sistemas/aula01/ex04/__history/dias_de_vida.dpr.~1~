@@ -1,0 +1,14 @@
+program dias_de_vida;
+
+uses
+  Vcl.Forms,
+  U.dias_de_vida in 'U.dias_de_vida.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
