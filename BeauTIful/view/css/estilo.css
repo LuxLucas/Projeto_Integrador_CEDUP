@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --cor-destaque:#FFEE33;
+    --cor-padrao:#6610f2;
+    --cor-fundo-destaque:#F8F9FA;
+    --fonte-titulo:'Poppins', Arial, Helvetica, sans-serif;
+    --fonte-padrao:'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*
+    CONFIGURAÇÕES GERAIS
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width:  100%;
+}
+
+header{
+    width:  100%;
+    background-color: var(--cor-fundo-destaque);
+}
+
+main{
+    width:  100%;
+    height: 100%;
+}
+
+/*
+    1.ESTILO DA NAVBAR
+*/
+
+nav{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.225);
+}
+
+#menuOffCanvas{
+    background-color: var(--cor-fundo-destaque);
+}
+
+/*
+    2.ESTILO DE TEXTOS
+*/
+
+/*
+    2-1.ESTILO DE LINKS
+*/
+body a{
+    text-decoration: none;
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+}
+
+.ancora{
+    font-size: 1rem;
+    color: var(--cor-padrao);
+}
+
+.span-link{
+    padding-right: 0.5rem;
+    font-family: var(--fonte-padrao);
+}
+
+.navbar-brand{
+    font-family: var(--fonte-titulo);
+    font-weight: bold;
+}
+
+/*
+    2.2-ESTILO DE TÍTULOS
+*/
+h1{
+    font-family: var(--fonte-titulo);
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.800);
+}
+
+.titulo{
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*
+    2.3-ESTILO DE PARÁGRAFOS
+*/
+p{
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.textoEtapa{
+    color: rgba(0, 0, 0, 0.550);
+    font-weight: 400;
+    margin-right: 0.8rem;
+}
+
+/*
+    3-ESTILO DE BOTÕES E INPUTS
+*/
+body input,button{
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+}
+
+button.btn-destaque{
+    font-weight: 600;
+}
