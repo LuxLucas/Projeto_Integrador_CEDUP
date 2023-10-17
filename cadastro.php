@@ -45,7 +45,7 @@ include "php/comandos.php";
     <main>
         <div class="container mt-5">
             <div class="d-flex justify-content-center">
-                <form action="php/cadastrarUsuario.php" method="POST">
+                <form action="php/cadastrarUsuario.php" method="POST" class="w-100">
                     <div class="row g-3 justify-content-center" id="etapaUm">
                         <div class="col-sm-10 col-md-8 col-lg-6">
                             <div class=" d-flex justify-content-between align-items-center">
@@ -75,6 +75,68 @@ include "php/comandos.php";
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
                             <button type="button" class="btn btn-primary btn-destaque w-100">Próximo</button>
+                        </div>
+                    </div>
+                    <div class="row g-3 justify-content-center d-none" id="etapaDois">
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <div class=" d-flex justify-content-between align-items-center">
+                                <h1 class="titulo">
+                                    Cadastro
+                                </h1>
+                                <p class="text-capitalize textoEtapa">
+                                    Etapa 2 de 3
+                                </p>
+                            </div>
+                        </div>  
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col md-8 col-lg-6">
+                            <label for="dataNasc" class="form-label">Data de Nascimento</label>
+                            <input type="date" name="dataNasc" id="dataNasc" class="form-control" placeholder="Data de Nascimento">
+                        </div>
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Número de Telefone">
+                        </div>
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <label for="telefone" class="form-label">Gênero</label>
+                            <select name="sexo" id="sexo" class="form-select">
+                                <option value="S" selected>Gênero</option>
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                                <option value="O">Outro</option> <!--Helicóptero de combate ?-->
+                            </select> 
+                        </div>
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
+                            <button type="button" class="btn btn-primary btn-destaque w-100">Próximo</button>
+                        </div>
+                    </div>
+                    <div class="row g-3 justify-content-center d-none" id="etapaTres">
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <div class=" d-flex justify-content-between align-items-center">
+                                <h1 class="titulo">
+                                    Cadastro
+                                </h1>
+                                <p class="text-capitalize textoEtapa">
+                                    Etapa 3 de 3
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                        </div> 
+                        <div class="w-100 d-none d-lg-block"></div>  
+                        <div class="col-sm-10 col-md-8 col-lg-6">
+                            <label for="confSenha" class="form-label">Confirme Senha</label>
+                            <input type="password" name="confSenha" id="confSenha" class="form-control" placeholder="Confirme Senha">
+                        </div>
+                        <div class="w-100 d-none d-lg-block"></div>
+                        <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
+                            <button type="submit" class="btn btn-primary btn-destaque w-100">Cadastrar</button>
                         </div>
                     </div>
                 </form>

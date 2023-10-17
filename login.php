@@ -47,21 +47,21 @@ include "php/comandos.php";
             <div class="d-flex justify-content-center">
                 <form action="php/logar.php" method="POST" class="w-100">
                     <div class="row g-3 justify-content-center">
-                        <div class="col-sm-7 col-md-8 col-lg-6">
+                        <div class="col-sm-10 col-md-8 col-lg-6">
                             <h1 class="titulo">Login</h1>
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-7 col-md-8 col-lg-6">
+                        <div class="col-sm-10 col-md-8 col-lg-6">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-7 col-md-8 col-lg-6">
+                        <div class="col-sm-10 col-md-8 col-lg-6">
                             <label for="senha" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="senha" placeholder="Senha">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-7 col-md-8 col-lg-6 mt-3">
+                        <div class="col-sm-10 col-md-8 col-lg-6 mt-3">
                             <button type="button" class="btn btn-primary btn-destaque w-100">Entrar</button>
                         </div>
                     </div>
