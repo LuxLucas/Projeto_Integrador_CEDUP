@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "php/comandos.php";
+$_SESSION["tipo"] = 1;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,19 +21,21 @@ include "php/comandos.php";
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-light py-3" id="nav-superior">
             <div class="container">
-                <a href="#" class="navbar-brand">BeauTIful</a>
+                <a href="index.php" class="navbar-brand">BeauTIful</a>
                 <button type="button" class="btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menuOffCanvas" aria-controls="offcanvasResponsive">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="offcanvas-lg offcanvas-start container-fluid" tabindex="-1" aria-labelledby="#offcanvasResponsiveLabel" id="menuOffCanvas">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasResponsivelLabel">Menú</h5>
+                        <h5 class="offcanvas-title" id="offcanvasResponsivelLabel">Menu</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#menuOffCanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body justify-content-between">
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Procure algo" aria-label="Search">
-                            <button class="btn btn-primary" type="submit">Buscar</button>
+                        <div class="input-group">
+                                <input class="form-control be-0" type="search" placeholder="Procure algo" aria-label="Search">
+                                <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+                            </div>
                         </form>
                         <?php
                         NavLogado();
@@ -60,21 +63,21 @@ include "php/comandos.php";
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="email" class="form-control" id="nome" placeholder="Nome">
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="email" class="form-control" id="cpf" placeholder="CPF">
+                            <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
-                            <button type="button" class="btn btn-primary btn-destaque w-100">Próximo</button>
+                            <button type="button" class="btn btn-primary btn-destaque w-100" id="proximo1">Próximo</button>
                         </div>
                     </div>
                     <div class="row g-3 justify-content-center d-none" id="etapaDois">
@@ -91,7 +94,7 @@ include "php/comandos.php";
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col md-8 col-lg-6">
                             <label for="dataNasc" class="form-label">Data de Nascimento</label>
-                            <input type="date" name="dataNasc" id="dataNasc" class="form-control" placeholder="Data de Nascimento">
+                            <input type="date" name="nascimento" id="dataNasc" class="form-control" placeholder="Data de Nascimento">
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6">
@@ -105,12 +108,12 @@ include "php/comandos.php";
                                 <option value="S" selected>Gênero</option>
                                 <option value="F">Feminino</option>
                                 <option value="M">Masculino</option>
-                                <option value="O">Outro</option> <!--Helicóptero de combate ?-->
+                                <option value="O">Outro</option>
                             </select> 
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
-                            <button type="button" class="btn btn-primary btn-destaque w-100">Próximo</button>
+                            <button type="button" class="btn btn-primary btn-destaque w-100" id="proximo2">Próximo</button>
                         </div>
                     </div>
                     <div class="row g-3 justify-content-center d-none" id="etapaTres">
@@ -136,7 +139,7 @@ include "php/comandos.php";
                         </div>
                         <div class="w-100 d-none d-lg-block"></div>
                         <div class="col-sm-10 col-md-8 col-lg-6 mt-4">
-                            <button type="submit" class="btn btn-primary btn-destaque w-100">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary btn-destaque w-100" id="btn_cadastrar">Cadastrar</button>
                         </div>
                     </div>
                 </form>
@@ -148,5 +151,6 @@ include "php/comandos.php";
     </footer>
         <!-- JavaScript -->
         <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="js/comandos.js"></script>
     </body>
 </html>

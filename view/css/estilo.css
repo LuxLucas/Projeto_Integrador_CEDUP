@@ -7,8 +7,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    --cor-destaque:#FFEE33;
-    --cor-padrao:#6610f2;
+    /*CORES*/
+
+    /*COR PRIMÁRIA*/
+
+    /*C1-INDIGO*/
+    --cor-padrao:     #6610f2;
+    --cor-padrao-900: rgba(103, 16, 242, 0.900);
+    --cor-padrao-800: rgba(103, 16, 242, 0.800);
+    --cor-padrao-700: rgba(103, 16, 242, 0.700);
+    --cor-padrao-600: rgba(103, 16, 242, 0.600);
+    --cor-padrao-500: rgba(103, 16, 242, 0.500);
+    --cor-padrao-400: rgba(103, 16, 242, 0.400);
+    --cor-padrao-300: rgba(103, 16, 242, 0.300);
+    --cor-padrao-200: rgba(103, 16, 242, 0.200);
+    --cor-padrao-100: rgba(103, 16, 242, 0.100);
+
+    /*CORES SECUNDÁRIAS*/
+
+    /*C2-AMARELO*/
+    --cor-destaque-1:    #e6c229;
+    --cor-destaque-1-900:rgba(230, 195, 41, 0.900);
+    --cor-destaque-1-800:rgba(230, 195, 41, 0.800);
+    --cor-destaque-1-700:rgba(230, 195, 41, 0.700);
+    --cor-destaque-1-600:rgba(230, 195, 41, 0.600);
+    --cor-destaque-1-500:rgba(230, 195, 41, 0.500);
+    --cor-destaque-1-400:rgba(230, 195, 41, 0.400);
+    --cor-destaque-1-300:rgba(230, 195, 41, 0.300);
+    --cor-destaque-1-200:rgba(230, 195, 41, 0.200);
+    --cor-destaque-1-100:rgba(230, 195, 41, 0.100);
+
+    /*C2-VERMELHO*/
+    --cor-destaque-2:     #d11149;
+    --cor-destaque-2-900: rgba(209, 17, 71, 0.900);
+    --cor-destaque-2-800: rgba(209, 17, 71, 0.800);
+    --cor-destaque-2-700: rgba(209, 17, 71, 0.700);
+    --cor-destaque-2-600: rgba(209, 17, 71, 0.600);
+    --cor-destaque-2-500: rgba(209, 17, 71, 0.500);
+    --cor-destaque-2-400: rgba(209, 17, 71, 0.400);
+    --cor-destaque-2-300: rgba(209, 17, 71, 0.300);
+    --cor-destaque-2-200: rgba(209, 17, 71, 0.200);
+    --cor-destaque-2-100: rgba(209, 17, 71, 0.100);
+
+    /*C2-LARANJA*/
+    --cor-destaque-3:     #f17105;
+    --cor-destaque-3-900: rgba(241, 111, 5, 0.900);
+    --cor-destaque-3-800: rgba(241, 111, 5, 0.800);
+    --cor-destaque-3-700: rgba(241, 111, 5, 0.700);
+    --cor-destaque-3-600: rgba(241, 111, 5, 0.600);
+    --cor-destaque-3-500: rgba(241, 111, 5, 0.500);
+    --cor-destaque-3-400: rgba(241, 111, 5, 0.400);
+    --cor-destaque-3-300: rgba(241, 111, 5, 0.300);
+    --cor-destaque-3-200: rgba(241, 111, 5, 0.200);
+    --cor-destaque-3-100: rgba(241, 111, 5, 0.100);
+
+    /*C2-AZUL*/
+    --cor-destaque-4:      #1a8fe3;
+    --cor-destaque-4-900:  rgba(26, 143, 227, 0.900);
+    --cor-destaque-4-800:  rgba(26, 143, 227, 0.800);
+    --cor-destaque-4-700:  rgba(26, 143, 227, 0.700);
+    --cor-destaque-4-600:  rgba(26, 143, 227, 0.600);
+    --cor-destaque-4-500:  rgba(26, 143, 227, 0.500);
+    --cor-destaque-4-400:  rgba(26, 143, 227, 0.400);
+    --cor-destaque-4-300:  rgba(26, 143, 227, 0.300);
+    --cor-destaque-4-200:  rgba(26, 143, 227, 0.200);
+    --cor-destaque-4-100:  rgba(26, 143, 227, 0.100);
+
     --cor-fundo-destaque:#F8F9FA;
     --fonte-titulo:'Poppins', Arial, Helvetica, sans-serif;
     --fonte-padrao:'Roboto', Verdana, Geneva, Tahoma, sans-serif;
@@ -32,25 +96,61 @@ header{
     background-color: var(--cor-fundo-destaque);
 }
 
-nav{
+nav#nav-superior{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.225);
 }
 
 main{
     width:  100%;
     height: 100%;
+    margin-bottom: 1.5rem;
 }
 
 div#menuOffCanvas{
     background-color: var(--cor-fundo-destaque);
 }
 
-div#etapaDois{
-    display: none;
+div.card{
+    width: 14.8rem;
 }
 
-div#etapaTres{
-    display: none;
+div.cor-bg-um{
+    background-color: var(--cor-padrao);
+    color: white;
+    width: 16rem;
+}
+
+div.cor-bg-dois{
+    background-color: var(--cor-destaque-1);
+    color: white;
+    width: 16rem;
+}
+
+div.cor-bg-tres{
+    background-color: var(--cor-destaque-2-800);
+    color: white;
+    width: 16rem;
+}
+
+div.cor-bg-quatro{
+    background-color: var(--cor-destaque-3-900);
+    color: white;
+    width: 16rem;
+}
+
+div.cor-bg-cinco{
+    background-color: var(--cor-destaque-4-900);
+    color: white;
+    width: 16rem;
+}
+
+div.endereco-head{
+    display: flexbox;
+    align-items: center;
+    color: white;
+    background-color: var(--cor-padrao);
+    padding: 0.75rem 1rem;
+
 }
 
 /*2-ESTILOS DE BOTÕES E INPUTS*/
@@ -64,10 +164,24 @@ button.btn-destaque{
     font-weight: 600;
 }
 
+button.drop-menu{
+    border: none;
+    background-color: transparent;
+}
+
+div.endereco-head .btn{
+    border-radius: 0rem;
+}
+
+button.btnUpdate{
+    display: none;
+}
+
+
 /*3-ESTILO DE TEXTOS*/
 
 /*  3-1.ESTILO DE LINKS*/
-a{
+body a{
     text-decoration: none;
     font-family: var(--fonte-padrao);
     font-weight: normal;
@@ -86,6 +200,19 @@ a{
 .navbar-brand{
     font-family: var(--fonte-titulo);
     font-weight: bold;
+}
+
+.link-drop{
+    color: black;
+}
+
+.link-drop:active{
+    color: white;
+}
+
+.link-adm{
+    text-decoration: none;
+    color: white;
 }
 
 /*  3.2-ESTILO DE TÍTULOS*/
@@ -115,4 +242,21 @@ p{
     color: rgba(0, 0, 0, 0.550);
     font-weight: 400;
     margin-right: 0.8rem;
+}
+
+.texto-preco{
+    font-weight: 700;
+}
+
+/*ÍCONES E IMAGENS*/
+.editarEndereco i{
+    color: var(--cor-destaque-1);
+}
+
+.excluirEndereco i{
+    color: var(--cor-destaque-2);
+}
+
+div.endereco-head i{
+    margin-right: 0.5rem;
 }

@@ -2,10 +2,9 @@
 session_start();
 include "php/comandos.php";
 ?>
-<!Doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +13,8 @@ include "php/comandos.php";
 
     <link rel="stylesheet" href="view/css/estilo.css">
     <link rel="stylesheet" href="view/css/main.css">
-    <title>BeauTIful - Nome provisório</title> 
+
+    <title>BeauTIful - Nome provisório</title>
   </head>
   <body>
   <header>
@@ -45,36 +45,11 @@ include "php/comandos.php";
         </nav>
     </header>
     <main>
-        <div class="container mt-5">
-            <div class="d-flex justify-content-center">
-                <form action="php/logar.php" method="POST" class="w-100">
-                    <div class="row g-3 justify-content-center">
-                        <div class="col-sm-10 col-md-8 col-lg-6">
-                            <h1 class="titulo">Login</h1>
-                        </div>
-                        <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-10 col-md-8 col-lg-6">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
-                        </div>
-                        <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-10 col-md-8 col-lg-6">
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
-                        </div>
-                        <div class="w-100 d-none d-lg-block"></div>
-                        <div class="col-sm-10 col-md-8 col-lg-6 mt-3">
-                            <button type="submit" class="btn btn-primary btn-destaque w-100">Entrar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+
     </main>
     <footer>
-
+        
     </footer>
-
     <!-- JavaScript -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>

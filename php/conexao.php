@@ -1,3 +1,3 @@
 <?php
-$conexao = mysqli_connection("localhost","root","","beautiful");
+$conexao = mysqli_connect("localhost","root","","beautiful");
 ?>

@@ -1,5 +1,5 @@
 <?php
-start_connection();
+session_start();
 $Email = $_POST['email'];
 $Senha = $_POST['senha'];
  if(empty($Email) || empty($Senha))
@@ -15,8 +15,9 @@ $Senha = $_POST['senha'];
     $dados = mysqli_fetch_assoc($pesquisa);
     $_SESSION['id'] = $dados['id_usu'];
     $_SESSION['logado'] = TRUE;
-    header("index.php")
+    $_SESSION['tipo_usu'] = $dados['cod_tipo'];
+    header("location:../index.php");
  }else{
-    header("login.php")
+    header("location:../login.php");
  }
 ?>
