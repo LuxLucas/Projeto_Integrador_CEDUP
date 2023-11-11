@@ -1,0 +1,393 @@
+/*CONFIGURAÇÕES GERAIS*/
+
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /*CORES*/
+
+    /*COR PRIMÁRIA*/
+
+    /*C1-INDIGO*/
+    --cor-padrao:     #6610f2;
+    --cor-padrao-900: rgba(103, 16, 242, 0.900);
+    --cor-padrao-800: rgba(103, 16, 242, 0.800);
+    --cor-padrao-700: rgba(103, 16, 242, 0.700);
+    --cor-padrao-600: rgba(103, 16, 242, 0.600);
+    --cor-padrao-500: rgba(103, 16, 242, 0.500);
+    --cor-padrao-400: rgba(103, 16, 242, 0.400);
+    --cor-padrao-300: rgba(103, 16, 242, 0.300);
+    --cor-padrao-200: rgba(103, 16, 242, 0.200);
+    --cor-padrao-100: rgba(103, 16, 242, 0.100);
+
+    /*CORES SECUNDÁRIAS*/
+
+    /*C2-AMARELO*/
+    --cor-destaque-1:    #e6c229;
+    --cor-destaque-1-900:rgba(230, 195, 41, 0.900);
+    --cor-destaque-1-800:rgba(230, 195, 41, 0.800);
+    --cor-destaque-1-700:rgba(230, 195, 41, 0.700);
+    --cor-destaque-1-600:rgba(230, 195, 41, 0.600);
+    --cor-destaque-1-500:rgba(230, 195, 41, 0.500);
+    --cor-destaque-1-400:rgba(230, 195, 41, 0.400);
+    --cor-destaque-1-300:rgba(230, 195, 41, 0.300);
+    --cor-destaque-1-200:rgba(230, 195, 41, 0.200);
+    --cor-destaque-1-100:rgba(230, 195, 41, 0.100);
+
+    /*C2-VERMELHO*/
+    --cor-destaque-2:     #d11149;
+    --cor-destaque-2-900: rgba(209, 17, 71, 0.900);
+    --cor-destaque-2-800: rgba(209, 17, 71, 0.800);
+    --cor-destaque-2-700: rgba(209, 17, 71, 0.700);
+    --cor-destaque-2-600: rgba(209, 17, 71, 0.600);
+    --cor-destaque-2-500: rgba(209, 17, 71, 0.500);
+    --cor-destaque-2-400: rgba(209, 17, 71, 0.400);
+    --cor-destaque-2-300: rgba(209, 17, 71, 0.300);
+    --cor-destaque-2-200: rgba(209, 17, 71, 0.200);
+    --cor-destaque-2-100: rgba(209, 17, 71, 0.100);
+
+    /*C2-LARANJA*/
+    --cor-destaque-3:     #f17105;
+    --cor-destaque-3-900: rgba(241, 111, 5, 0.900);
+    --cor-destaque-3-800: rgba(241, 111, 5, 0.800);
+    --cor-destaque-3-700: rgba(241, 111, 5, 0.700);
+    --cor-destaque-3-600: rgba(241, 111, 5, 0.600);
+    --cor-destaque-3-500: rgba(241, 111, 5, 0.500);
+    --cor-destaque-3-400: rgba(241, 111, 5, 0.400);
+    --cor-destaque-3-300: rgba(241, 111, 5, 0.300);
+    --cor-destaque-3-200: rgba(241, 111, 5, 0.200);
+    --cor-destaque-3-100: rgba(241, 111, 5, 0.100);
+
+    /*C2-AZUL*/
+    --cor-destaque-4:      #1a8fe3;
+    --cor-destaque-4-900:  rgba(26, 143, 227, 0.900);
+    --cor-destaque-4-800:  rgba(26, 143, 227, 0.800);
+    --cor-destaque-4-700:  rgba(26, 143, 227, 0.700);
+    --cor-destaque-4-600:  rgba(26, 143, 227, 0.600);
+    --cor-destaque-4-500:  rgba(26, 143, 227, 0.500);
+    --cor-destaque-4-400:  rgba(26, 143, 227, 0.400);
+    --cor-destaque-4-300:  rgba(26, 143, 227, 0.300);
+    --cor-destaque-4-200:  rgba(26, 143, 227, 0.200);
+    --cor-destaque-4-100:  rgba(26, 143, 227, 0.100);
+
+    --cor-fundo-destaque:#F8F9FA;
+    --fonte-titulo:'Poppins', Arial, Helvetica, sans-serif;
+    --fonte-padrao:'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*1-ESTILOS DE CONTAINERS*/
+
+body{
+    height: 100%;
+    width:  100%;
+}
+
+header{
+    width:  100%;
+    background-color: var(--cor-fundo-destaque);
+}
+
+nav#nav-superior{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.225);
+}
+.card-img-top {
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    object-position:50% 50%;
+   }
+main{
+    width:  100%;
+    height: 100%;
+    margin-bottom: 1.5rem;
+}
+
+div#menuOffCanvas{
+    background-color: var(--cor-fundo-destaque);
+}
+
+div.card{
+    width: 16rem;
+}
+
+div.cor-bg-um{
+    background-color: var(--cor-padrao);
+    color: white;
+    width: 16.2rem;
+}
+
+div.cor-bg-dois{
+    background-color: var(--cor-destaque-1);
+    color: white;
+    width: 16.2rem;
+}
+
+div.cor-bg-tres{
+    background-color: var(--cor-destaque-2-800);
+    color: white;
+    width: 16.2rem;
+}
+
+div.cor-bg-quatro{
+    background-color: var(--cor-destaque-3-900);
+    color: white;
+    width: 16.2rem;
+}
+
+div.cor-bg-cinco{
+    background-color: var(--cor-destaque-4-900);
+    color: white;
+    width: 16.2rem;
+}
+
+div.endereco-head{
+    display: flexbox;
+    align-items: center;
+    color: white;
+    background-color: var(--cor-padrao);
+    padding: 0.75rem 1rem;
+
+}
+
+div.container-table-head{
+    display: flexbox;
+    align-items: center;
+    color: white;
+    background-color: var(--cor-padrao);
+    padding: 0.75rem 1rem;
+}
+
+div#div-container-img-produto{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+div#div-img-produto{
+    max-height: 500px;
+    max-width: 500px;
+}
+
+div.modal{
+    font-family: var(--fonte-padrao);
+}
+
+div.img-list{
+    max-width: 5.5rem;
+}
+
+div.divImage{
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+div.bg-grey-claro{
+    background-color: #ddd;
+}
+
+.divBagBuy{
+    min-height: 100px;
+}
+
+div.divTdList{
+    min-height: 100px;
+    max-height: 20rem;
+}
+
+.text-truncate-table{
+    max-width: 20rem;
+}
+
+/*2-ESTILOS DE BOTÕES E INPUTS*/
+
+body input,button{
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+}
+
+button.btn-destaque{
+    font-weight: 600;
+}
+
+button.drop-menu{
+    border: none;
+    background-color: transparent;
+}
+
+div.endereco-head .btn{
+    border-radius: 0.15rem;
+    font-weight: 500;
+}
+
+div.container-table-head .btn{
+    border-radius: 0.15rem;
+    font-weight: 500;
+}
+
+button.btn-buy{
+    border-radius: 0.2rem;
+    height: 3.5rem;
+}
+
+button.btn-buy a{
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+/*3-ESTILO DE TEXTOS*/
+
+/*  3-1.ESTILO DE LINKS*/
+body a{
+    text-decoration: none;
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+    color: white;
+}
+
+.ancora{
+    font-size: 1rem;
+    color: var(--cor-padrao);
+}
+
+.span-link{
+    padding-right: 0.5rem;
+    font-family: var(--fonte-padrao);
+}
+
+.navbar-brand{
+    font-family: var(--fonte-titulo);
+    font-weight: bold;
+}
+
+.link-drop{
+    color: black;
+}
+
+.link-drop:active{
+    color: white;
+}
+
+.link-adm{
+    text-decoration: none;
+    color: white;
+}
+
+.text-grey{
+    color: var(--cor-padrao-600);
+}
+
+/*  3.2-ESTILO DE TÍTULOS*/
+
+h1{
+    font-family: var(--fonte-titulo);
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.800);
+}
+
+.titulo{
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/*  3.3-ESTILO DE PARÁGRAFOS*/
+
+body p{
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.textoEtapa{
+    color: rgba(0, 0, 0, 0.550);
+    font-weight: 400;
+    margin-right: 0.8rem;
+}
+
+.texto-preco{
+    font-weight: 700;
+}
+
+#marca-buy{
+    font-weight: 500;
+}
+
+#preco-buy{
+    font-weight: bold;
+}
+
+#categ-buy{
+    font-weight: 400;
+}
+
+.text-truncate-3l{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-truncate-2l{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-truncate-1l{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/*ÍCONES E IMAGENS*/
+.editar i{
+    color: var(--cor-padrao-700);
+}
+
+.btn p-0 pe-1 editarQuatidade i{
+
+    color: var(--cor-padrao-700);
+}
+
+.excluir i{
+    color: var(--cor-destaque-2-800);
+}
+
+div.endereco-head i{
+    margin-right: 0.5rem;
+}
+
+.corazon-view{
+    font-size: 2rem;
+}
+
+.favoritoInSelect{
+    cursor: pointer;
+    color: black;
+    font-size: 2rem;
+}
+
+.favoritoSelect{
+    cursor: pointer;
+    color: var(--cor-destaque-2);
+    font-size: 2rem;
+}

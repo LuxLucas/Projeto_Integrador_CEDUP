@@ -90,7 +90,20 @@ body{
     height: 100%;
     width:  100%;
 }
+.favorito:link
+{
+    color:red;
+}
 
+.favorito:visited
+{
+    color:red;
+}
+
+.favorito:hover 
+{
+    color:red;
+}
 header{
     width:  100%;
     background-color: var(--cor-fundo-destaque);
@@ -99,7 +112,12 @@ header{
 nav#nav-superior{
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.225);
 }
-
+.card-img-top {
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    object-position:50% 50%;
+   }
 main{
     width:  100%;
     height: 100%;
@@ -111,37 +129,37 @@ div#menuOffCanvas{
 }
 
 div.card{
-    width: 14.8rem;
+    width: 16rem;
 }
 
 div.cor-bg-um{
     background-color: var(--cor-padrao);
     color: white;
-    width: 16rem;
+    width: 16.2rem;
 }
 
 div.cor-bg-dois{
     background-color: var(--cor-destaque-1);
     color: white;
-    width: 16rem;
+    width: 16.2rem;
 }
 
 div.cor-bg-tres{
     background-color: var(--cor-destaque-2-800);
     color: white;
-    width: 16rem;
+    width: 16.2rem;
 }
 
 div.cor-bg-quatro{
     background-color: var(--cor-destaque-3-900);
     color: white;
-    width: 16rem;
+    width: 16.2rem;
 }
 
 div.cor-bg-cinco{
     background-color: var(--cor-destaque-4-900);
     color: white;
-    width: 16rem;
+    width: 16.2rem;
 }
 
 div.endereco-head{
@@ -153,7 +171,65 @@ div.endereco-head{
 
 }
 
-/*2-ESTILOS DE BOTÕES E INPUTS*/
+div.container-table-head{
+    display: flexbox;
+    align-items: center;
+    color: white;
+    background-color: var(--cor-padrao);
+    padding: 0.75rem 1rem;
+}
+
+div#div-container-img-produto{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+div#div-img-produto{
+    max-height: 500px;
+    max-width: 500px;
+}
+
+div.modal{
+    font-family: var(--fonte-padrao);
+}
+
+div.img-list{
+    max-width: 5.5rem;
+}
+
+div.divImage{
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.bg-grey-claro{
+    background-color: #ddd;
+}
+
+button.bg-grey{
+    background-color: #ddd;
+    color: #ddd;
+}
+
+.divBagBuy{
+    min-height: 100px;
+}
+
+div.divTdList{
+    min-height: 100px;
+    max-height: 20rem;
+}
+
+.text-truncate-table{
+    max-width: 20rem;
+}
+
+/*******************************
+    2-ESTILOS DE BOTÕES E INPUTS
+********************************/
 
 body input,button{
     font-family: var(--fonte-padrao);
@@ -170,21 +246,61 @@ button.drop-menu{
 }
 
 div.endereco-head .btn{
-    border-radius: 0rem;
+    border-radius: 0.15rem;
+    font-weight: 500;
 }
 
-button.btnUpdate{
-    display: none;
+div.container-table-head .btn{
+    border-radius: 0.15rem;
+    font-weight: 500;
 }
 
+button.btn-buy{
+    border-radius: 0.2rem;
+    height: 3.5rem;
+}
 
-/*3-ESTILO DE TEXTOS*/
+a.btn-buy {
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color:white;
+    text-decoration: none;
+}
+
+button.btn-plus{
+    background-color:#ddd;
+}
+
+button.corazonInativo{
+    background-color: #dddddd73;
+    color: rgba(0, 0, 0, 0.600);
+}
+
+button.corazonInativo:hover{
+    background-color: #dddddd73;
+    color: rgba(0, 0, 0, 0.600);
+}
+
+button.corazonAtivo{
+    color:var(--cor-padrao-800);
+    background-color: var(--cor-padrao-100);
+}
+
+button.corazonAtivo:hover{
+    color:var(--cor-padrao-800);
+    background-color: var(--cor-padrao-100);
+}
+
+/**********************
+    3-ESTILO DE TEXTOS
+***********************/
 
 /*  3-1.ESTILO DE LINKS*/
 body a{
     text-decoration: none;
     font-family: var(--fonte-padrao);
     font-weight: normal;
+    color: white;
 }
 
 .ancora{
@@ -215,6 +331,10 @@ body a{
     color: white;
 }
 
+.text-grey{
+    color: var(--cor-padrao-600);
+}
+
 /*  3.2-ESTILO DE TÍTULOS*/
 
 h1{
@@ -232,7 +352,7 @@ h1{
 
 /*  3.3-ESTILO DE PARÁGRAFOS*/
 
-p{
+body p{
     font-family: var(--fonte-padrao);
     font-weight: normal;
     font-size: 1rem;
@@ -248,15 +368,78 @@ p{
     font-weight: 700;
 }
 
-/*ÍCONES E IMAGENS*/
-.editarEndereco i{
-    color: var(--cor-destaque-1);
+#marca-buy{
+    font-weight: 500;
 }
 
-.excluirEndereco i{
-    color: var(--cor-destaque-2);
+#preco-buy{
+    font-weight: bold;
+}
+
+#categ-buy{
+    font-weight: 400;
+}
+
+.text-truncate-3l{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-truncate-2l{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-truncate-1l{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.stars:hover p.stars{
+    color:var(--cor-padrao-600);
+}
+
+/********************
+    ÍCONES E IMAGENS
+**********************/
+.editar i{
+    color: var(--cor-padrao-700);
+}
+
+.btn p-0 pe-1 editarQuatidade i{
+
+    color: var(--cor-padrao-700);
+}
+
+.excluir i{
+    color: var(--cor-destaque-2-800);
 }
 
 div.endereco-head i{
     margin-right: 0.5rem;
+}
+
+.corazon-view{
+    font-size: 2rem;
+}
+
+.favoritoInSelect{
+    cursor: pointer;
+    color: black;
+    font-size: 2rem;
+}
+
+.favoritoSelect{
+    cursor: pointer;
+    color: var(--cor-destaque-2);
+    font-size: 2rem;
 }

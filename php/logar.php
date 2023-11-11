@@ -18,6 +18,7 @@ $Senha = $_POST['senha'];
     $_SESSION['tipo_usu'] = $dados['cod_tipo'];
     header("location:../index.php");
  }else{
+   $_SESSION['erro'] = 1;
     header("location:../login.php");
  }
 ?>

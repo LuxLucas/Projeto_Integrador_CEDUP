@@ -52,5 +52,7 @@ include "php/comandos.php";
     </footer>
     <!-- JavaScript -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/valores.js"></script>
   </body>
 </html>

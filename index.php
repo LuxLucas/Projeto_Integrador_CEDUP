@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "php/comandos.php";
+include "php/Buscar.php";
 ?>
 <!Doctype html>
 <html lang="pt-br">
@@ -11,118 +12,72 @@ include "php/comandos.php";
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <link rel="stylesheet" href="view/css/estilo.css">
     <link rel="stylesheet" href="view/css/main.css">
     <title>BeauTIful - Nome provisório</title> 
   </head>
   <body>
   <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light py-3" id="nav-superior">
-            <div class="container">
-                <a href="index.php" class="navbar-brand">BeauTIful</a>
-                <button type="button" class="btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menuOffCanvas" aria-controls="offcanvasResponsive">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas-lg offcanvas-start container-fluid" tabindex="-1" aria-labelledby="#offcanvasResponsiveLabel" id="menuOffCanvas">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasResponsivelLabel">Menu</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#menuOffCanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body justify-content-between">
-                        <form class="d-flex" role="search">
-                            <div class="input-group">
-                                <input class="form-control be-0" type="search" placeholder="Procure algo" aria-label="Search">
-                                <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
-                            </div>
-                        </form>
-                        <?php
-                        NavLogado();
-                        ?>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light py-3 mb-4 shadow-sm" id="nav-superior">
+            <div class="container d-flex justify-content-between">
+                <div><a href="index.php" class="navbar-brand">BeauTIful</a></div>
+
+                <div>
+                    <button type="button" class="btn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menuOffCanvas" aria-controls="offcanvasResponsive">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas-lg offcanvas-start container-fluid" tabindex="-1" aria-labelledby="#offcanvasResponsiveLabel" id="menuOffCanvas">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasResponsivelLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#menuOffCanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body justify-content-between">
+                            <?php
+                            NavLogado();
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main>
+        <!-- Campo de pesquisa e filtro de produtos -->
         <div class="container">
-            <div class="mt-5">
-                <div class="row row-cols-5 g-3 justify-content-center">
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://static.natura.com/cdn/ff/mUaHNvfKRSSji30SQEPqugZzV3T8daNuJ1jAuXpbzgE/1697527384/public/products/114584_1_8.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <p class="card-title">Essencial Ato Deo Parfum Masculino</p>
-                                <p class="card-text texto-preco">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <form action="pesquisa.php" method="get" class="d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+                        <div class="input-group input-group-sm">
+                            <input type="search" name="pesquisa" id="pesquisa" class="form-control" placeholder="Busque algo...">
+                            <button type="submit" class="btn btn-primary">
+                                Pesquisar
+                            </button>
                         </div>
-                    </div>
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B52012/f7826bd0-d67a-4b85-87f7-f0cbdf730f89-bot-52012-nativa-spa-ameixa-dourada-body-splash-frontal-01.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <h5 class="card-title">Essencial Ato Deo Parfum Masculino</h5>
-                                <p class="card-text">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://static.natura.com/cdn/ff/mUaHNvfKRSSji30SQEPqugZzV3T8daNuJ1jAuXpbzgE/1697527384/public/products/114584_1_8.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <h5 class="card-title">Essencial Ato Deo Parfum Masculino</h5>
-                                <p class="card-text">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B52012/f7826bd0-d67a-4b85-87f7-f0cbdf730f89-bot-52012-nativa-spa-ameixa-dourada-body-splash-frontal-01.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <h5 class="card-title">Essencial Ato Deo Parfum Masculino</h5>
-                                <p class="card-text">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://static.natura.com/cdn/ff/mUaHNvfKRSSji30SQEPqugZzV3T8daNuJ1jAuXpbzgE/1697527384/public/products/114584_1_8.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <h5 class="card-title">Essencial Ato Deo Parfum Masculino</h5>
-                                <p class="card-text">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-auto mb-3">
-                        <div class="card">
-                            <img class="card-img-top" src="https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_210,h_210/v1/imagens/product/B52012/f7826bd0-d67a-4b85-87f7-f0cbdf730f89-bot-52012-nativa-spa-ameixa-dourada-body-splash-frontal-01.jpg" alt="Imagem Produto">
-                            <div class="card-body">
-                                <p class="card-text">ESSENCIAL</p>
-                                <h5 class="card-title">Essencial Ato Deo Parfum Masculino</h5>
-                                <p class="card-text">R$ 240,00</p>
-                                <button type="button" class="btn btn-primary w-100">Adquira Já</button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="mt-3">
+            <div class="row">
+               <?php paginaPrincipal()?>
+                    <form action="php/filtro.php" method="POST"  class="ms-3 d-inline-block">
+                        <select class="form-select form-select-sm" name="filtro" id="filtro">
+                            <?php opcoesFiltro()?>
+                        </select>
+                        <button type="submit" class="btn btn-primary">
+                                Filtrar
+                            </button>
+                    </form>
+                </div>
                 </div>
             </div>
         </div>
-    </main>
-    <footer>
-
-    </footer>
+        <!-- Fim -->
 
     <!-- JavaScript -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/valores.js"></script>
+    <script src="js/comandos.js"></script>
   </body>
 </html>
