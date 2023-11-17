@@ -16,6 +16,10 @@ $sql["usuario"] = "root";
 $sql["senha"]   = "";
 $sql["banco"]   = "beautiful_bd2";
 
-$conexao = mysqli_connect($sql["host"],$sql["usuario"],$sql["senha"],$sql["banco"]);
+try{
+    $conexao = mysqli_connect($sql["host"],$sql["usuario"],$sql["senha"],$sql["banco"]);
+}catch(exception $erro){
+    echo "Erro detectado: ".$erro -> getMessage();
+}
 
 ?>

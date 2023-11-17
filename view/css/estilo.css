@@ -90,20 +90,7 @@ body{
     height: 100%;
     width:  100%;
 }
-.favorito:link
-{
-    color:red;
-}
 
-.favorito:visited
-{
-    color:red;
-}
-
-.favorito:hover 
-{
-    color:red;
-}
 header{
     width:  100%;
     background-color: var(--cor-fundo-destaque);
@@ -130,6 +117,16 @@ div#menuOffCanvas{
 
 div.card{
     width: 16rem;
+}
+
+div.card-pag{
+    width:18rem;
+}
+
+div.card-img{
+    height:192px;
+    display: flex;
+    align-items: center;
 }
 
 div.cor-bg-um{
@@ -214,8 +211,10 @@ button.bg-grey{
     color: #ddd;
 }
 
-.divBagBuy{
+.divTd-100{
     min-height: 100px;
+    display: flex;
+    align-items: center;
 }
 
 div.divTdList{
@@ -442,4 +441,19 @@ div.endereco-head i{
     cursor: pointer;
     color: var(--cor-destaque-2);
     font-size: 2rem;
+}
+
+.favorito:link
+{
+    color:red;
+}
+
+.favorito:visited
+{
+    color:red;
+}
+
+.favorito:hover 
+{
+    color:red;
 }

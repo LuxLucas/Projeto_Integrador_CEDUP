@@ -80,7 +80,7 @@ $id = $_GET['selectPais'];
                         <th>BAIRRO</th>
                         <th>LOGRADOURO</th>
                         <th>COMPLEMENTO</th>
-                        <th>AÇÕES</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>

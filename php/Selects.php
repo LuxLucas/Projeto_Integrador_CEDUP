@@ -7,7 +7,7 @@ function Pais()
     $pesquisa = mysqli_query($conexao,$comando);
     while($dados = mysqli_fetch_array($pesquisa))
     {
-        echo "<option value=".$dados[0].">".$dados[1]."</option>";
+        echo "<option value='".$dados[0]."'>".$dados[1]."</option>";
     }
 }
 

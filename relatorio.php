@@ -4,7 +4,6 @@ include "php/comandos.php";
 include "php/Buscar.php";
 include "php/Selects.php";
 
-//$id = $_GET['id'];
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -65,6 +64,7 @@ include "php/Selects.php";
                 <h2>Relatórios</h2>
             </div>
             <hr>
+            
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
                     <div class="my-2 d-flex justify-content-between">

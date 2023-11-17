@@ -17,40 +17,40 @@ $(document).ready(function(){
    {
    if (erro==1)
    {
-      $("#texto_erro").text("não foi possivel autenticar email ou senha");
+      $("#texto_erro").text("Não foi possÍvel autenticar email ou senha.");
    }else if (erro==2)
    {
-      $("#texto_erro").text("pedimos perdão mas não conseguimos atualizar os dados por motivos desconhecidos");
+      $("#texto_erro").text("Pedimos perdão, não conseguimos atualizar os dados por motivos desconhecidos.");
    }else if (erro==3)
    {
-      $("#texto_erro").text("pedimos perdão mas não conseguimos cadastrar os dados por motivos desconhecidos");
+      $("#texto_erro").text("Pedimos perdão, não conseguimos cadastrar os dados por motivos desconhecidos.");
    }else if(erro==4)
    {
-      $("#texto_erro").text("não foi possivel concluir a operação por este nome de categoria ja esta em uso");
+      $("#texto_erro").text("Não foi possível concluir a operação pois este nome de categoria já está em uso.");
    }else if(erro==5)
    {
-      $("#texto_erro").text("não foi possivel concluir a operação por este codigo de cupom  ja esta em uso");
+      $("#texto_erro").text("Não foi possível concluir a operação pois este código de cupom já está em uso.");
    }else if(erro==6)
    {
-      $("#texto_erro").text("não foi possivel concluir a operação por este pais ja existir nos cadastros");
+      $("#texto_erro").text("Não foi possível concluir a operação pois este país já existe em nosso banco de dados.");
    }else if(erro==7)
    {
-      $("#texto_erro").text("não foi possivel concluir a operação por conta de um erro na imagem");
+      $("#texto_erro").text("Não foi possível concluir a operação por conta de um erro na imagem.");
    }else if(erro==8)
    {
-      $("#texto_erro").text("não foi possivel cadastrar distribuidora por cnpj em uso");
+      $("#texto_erro").text("Não foi possível cadastrar distribuidora pois este CNPJ já está uso.");
    }else if(erro==9)
    {
-      $("#texto_erro").text("não foi possivel concluir a operação por este estado já existir no país");
+      $("#texto_erro").text("Não foi possível concluir a operação por este estado já existir no país.");
    }else if(erro==10)
    {
-      $("#texto_erro").text("CPF ou email já estão sendo utilizados");
+      $("#texto_erro").text("CPF ou email já estão sendo utilizados.");
    }else if(erro==11)
    {
-      $("#texto_erro").text("CPF invalido");
+      $("#texto_erro").text("CPF inválido.");
    }else if(erro==12)
    {
-      $("#texto_erro").text("Não existe essa quantidade em estoque");
+      $("#texto_erro").text("Não existe essa quantidade em estoque.");
    }
    
 
@@ -215,7 +215,7 @@ function adicionar(e)
          var total_venda = (parseFloat($("#totalPreco").text())+preco);
          $("#totalPreco").text(total_venda.toFixed(2))
       }else{
-         $("#texto_erro").text("Não existe essa quantidade em estoque");
+         $("#texto_erro").text("Não existe essa quantidade em estoque.");
          $("#erro").modal("show");
       }
    })
@@ -240,7 +240,7 @@ function retirar(e)
          var total_venda = parseFloat($("#totalPreco").text())-preco;
          $("#totalPreco").text(total_venda.toFixed(2))
       }else{
-         $("#texto_erro").text("Não existe essa quantidade em estoque");
+         $("#texto_erro").text("Não existe essa quantidade em estoque.");
          $("#erro").modal("show");
       }
    })

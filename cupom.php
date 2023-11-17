@@ -63,13 +63,14 @@ include "php/Buscar.php";
         <!--CONTAINER DOS CAMPOS DE CUPOM-->
             <div class="endereco">
 
-         <h2>
-            Administrar Cupom 
-         </h2>
-         <hr>
+         <div class="my-4">
+           <h1>
+              Administrar Cupom
+           </h1>
+         </div>
           <div class="input-group d-flex justify-content-end">
             <button type="button" class="btn btn-sm btn-primary d-flex me-1" id="btnCadastro" data-bs-toggle='modal' data-bs-target='#cadastro'>
-              <p class="me-1 my-1">Cadastrar Cupom <i class="ms-1 fs-5 bi bi-plus-square"></i></p>
+              <p class="m-0">Cadastrar Cupom <i class="ms-1 fs-5 bi bi-plus-square"></i></p>
             </button>
           </div>
          <hr>
@@ -84,7 +85,7 @@ include "php/Buscar.php";
                 <th>ID</th>
                 <th>NOME</th>
                 <th>VALOR</th>
-                <th>AÇÕES</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -101,93 +102,96 @@ include "php/Buscar.php";
         
     </footer>
 
+<!-- MODAL EXCLUIR -->
     <div class="modal fade" id="excluir" tabindex="-1" aria-labelledby="excluirLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="excluirLabel">Excluir</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <form action="php/Excluir/excluirCupom.php" method="POST">
-        <div class="modal-body">
-          <p>Voce deseja realmente excluir este item?</p>
-          <input type='text' id='excluirID' value='' name='id' hidden>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Excluir</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-      <div class="modal fade" id="alterar" tabindex="-1" aria-labelledby="alterarLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="alterarLabel">alterar</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="php/Excluir/excluirCupom.php" method="POST">
+              <div class="modal-body text-center">
+                <h2 class="fs-3 mb-3">ATENÇÃO</h2>
+                <p class="fs-5 m-auto">Você deseja realmente <span class="text-danger">excluir</span> este cupom ?</p>
+                <input type='text' id='excluirID' class="d-flex-none" value='' name='id' hidden>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-danger">Excluir</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+<!-- FIM. MODAL ALTERAR -->
+      <div class="modal fade" id="alterar" data-bs-backdrop="static" tabindex="-1" aria-labelledby="alterarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title fs-4" id="alterarLabel">Alterar Cupom</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
               <form action="php/Alterar/alterarCupom.php" method="POST"> 
                 <div class="modal-body">
-                <div class="w-100 d-none d-lg-block"></div>
                 <input type='text' id='idCupom' value='' hidden name='id'>
-                  <div class="col-sm-10 col-md-8 col-lg-6">
-                      <label for="nome" class="form-label">Nome</label>
-                      <input type="text" class="form-control" name="codigo" id="codigoCupom" placeholder="Nome">
-                  </div>
-                  <div class="col-sm-10 col-md-8 col-lg-6">
-                      <label for="desconto" class="form-label">desconto</label>
-                      <input type="text" class="form-control" name="desconto" id="descontoCupom" placeholder="desconto">
+                  <div class="row">
+                    <div class="col-sm-10 col-md-6 mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="codigo" id="codigoCupom" placeholder="Nome">
+                    </div>
+                    <div class="col-sm-10 col-md-6 mb-3">
+                        <label for="desconto" class="form-label">Desconto</label>
+                        <input type="text" class="form-control" name="desconto" id="descontoCupom" placeholder="Desconto">
+                    </div>
                   </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">alterar</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="submit" class="btn btn-primary">Alterar</button>
                 </div>
               </form>
               </div>
             </div>
           </div>
           </div>
-          <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
-        <div class="modal-dialog">
+<!-- FIM. MODAL CADASTRAR -->
+          <div class="modal fade" id="cadastro" data-bs-backdrop="static" tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="cadastrarLabel">cadastrar</h1>
+              <h2 class="modal-title fs-4" id="cadastrarLabel">Cadastrar Cupom</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
               <form action="php/Cadastrar/cadastrarCupom.php" method="POST"> 
                 <div class="modal-body">
-                <div class="col-sm-10 col-md-8 col-lg-6">
-                      <label for="nome" class="form-label">Nome</label>
-                      <input type="text" class="form-control" name="codigo" id="codigoCupom" placeholder="Nome">
-                  </div>
-                  <div class="col-sm-10 col-md-8 col-lg-6">
-                      <label for="desconto" class="form-label">desconto</label>
-                      <input type="text" class="form-control" name="desconto" id="descontoCupom" placeholder="desconto">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" name="codigo" id="codigoCupom" placeholder="Nome">
+                    </div>
+                    <div class="col-sm-12 col-md-6 mb-3">
+                        <label for="desconto" class="form-label">Desconto</label>
+                        <input type="text" class="form-control" name="desconto" id="descontoCupom" placeholder="Desconto">
+                    </div>
                   </div>
                 </div>
                 <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
                   <button type="submit" class="btn btn-primary">Cadastrar</button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
               </form>
               </div>
             </div>
           </div>
-
-          <div class="modal" id="erro" data-erro=<?php VerificarErro()?> tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+<!-- FIM. MODAL DE ERRO -->
+<div class="modal" id="erro" data-erro=<?php VerificarErro()?> tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Erro</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <p id="texto_erro"></p>
+      <div class="modal-body text-center">
+        <h1 class="modal-title fs-4 mb-3">ERRO</h1>
+        <p id="texto_erro" class="m-0 fs-5"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -195,6 +199,7 @@ include "php/Buscar.php";
     </div>
   </div>
 </div>
+<!-- FIM. -->
       <!-- JavaScript -->
     <script src="js/dataTable.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>

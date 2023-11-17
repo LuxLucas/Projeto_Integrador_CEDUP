@@ -17,7 +17,7 @@ include "php/comandos.php";
     <title>BeauTIful - Nome provisório</title>
   </head>
   <body>
-  <header class="mb-3 mb-md-4 mb-lg-5">
+  <header>
         <nav class="navbar stiky-top navbar-expand-sm navbar-light bg-light py-3" id="nav-superior">
             <div class="container d-flex justify-content-between">
                 <a href="index.php" class="navbar-brand">BeauTIful</a>
@@ -41,28 +41,39 @@ include "php/comandos.php";
         </nav>
     </header>
     <main>
-        <div class="container mt-5 d-flex align-items-center h-100">
-            <div class="row row-cols-sm-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card cor-bg-dois m-auto">
-                        <a href="produto.php" class="link-adm">
-                            <div class="card-body">
-                                <h5 class="card-title">Produto</h5>
-                                <p>Gerencie informações referentes a produtos aqui.</p>
-                            </div>
-                        </a>
+        <div class="container">
+            <div class="mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php" class="text-primary">Home</a></li>
+                    <li class="breadcrumb-item"><a href="administrar.php" class="text-primary">Administração</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Administrar Produto</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="">
+                <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+                    <div class="col">
+                        <div class="card cor-bg-dois m-auto text-center">
+                            <a href="produto.php" class="link-adm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Produto</h5>
+                                    <p>Gerencie informações referentes a produtos aqui.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card cor-bg-cinco m-auto text-center">
+                            <a href="distribuidor.php" class="link-adm">
+                                <div class="card-body">
+                                    <h5 class="card-title">Distribuidora</h5>
+                                    <p>Gerencie informações referentes a distribuidoras aqui.</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card cor-bg-cinco m-auto">
-                        <a href="distribuidor.php" class="link-adm">
-                            <div class="card-body">
-                                <h5 class="card-title">Distribuidora</h5>
-                                <p>Gerencie informações referentes a distribuidoras aqui.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>   
             </div>
         </div>
     </main>

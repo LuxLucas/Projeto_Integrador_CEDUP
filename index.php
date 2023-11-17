@@ -43,6 +43,7 @@ include "php/Buscar.php";
         </nav>
     </header>
     <main>
+
         <!-- Campo de pesquisa e filtro de produtos -->
         <div class="container">
             <div class="row">
@@ -69,9 +70,10 @@ include "php/Buscar.php";
                             </button>
                     </form>
                 </div>
-                </div>
             </div>
+            
         </div>
+    </div>
         <!-- Fim -->
 
     <!-- JavaScript -->

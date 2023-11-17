@@ -1,0 +1,46 @@
+ <div class="modal fade" id="cadastrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Endereço</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+          <div class="row g-3 justify-content-center">
+            <div class="col-12">
+              <label for="municipio" class="form-label">Municipio</label>
+              <input type="text" class="form-control" name="municipio" id="municipio" placeholder="Municipio">
+            </div>
+            <div class="col-12">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
+            </div>
+            <div class="col-12">
+              <label for="logradouro" class="form-label">Logradouro</label>
+              <input type="text" class="form-control" name="logradouro" id="logradouro" placeholder="Logradouro">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="telefone" class="form-label">Estado</label>
+                <select name="cadEstado" id="cadEstado" class="form-select">
+                    <option value="#">Estado</option>
+                </select> 
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <label for="cep" class="form-label">CEP</label>
+              <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
+            </div>
+            <div class="col-12">
+              <label for="Complemento" class="form-label">Complemento</label>
+              <input type="text" class="form-control" name="complemento" id="complemento" placeholder="Complemento">
+            </div>
+          </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Cadastrar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -155,9 +155,13 @@ array_push($valores,$salario);
         </div>
         <hr>
                 <div class="mb-4">
+                    <a href="produto.php" class="btn btn-outline-secondary" role="button">
+                        <p class="my-auto">Gerenciar</p>
+                    </a>
                     <button type="button" id="imprimir" name="imprimirLucro" class="btn btn-primary">
                         <p class="my-auto">Imprimir <i class="bi bi-filetype-pdf"></i></p>
                     </button>
+
                 </div>
     </div>
 </body>

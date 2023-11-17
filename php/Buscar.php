@@ -40,9 +40,9 @@ function BuscarFuncionario(){
         <tr>
             <td>".$dados[0]."</td>
             <td>".$dados[1]."</td>
-            <td>".$dados[2]."</td>
-            <td>".$dados[3]."</td>
-            <td>".$dados[4]."</td>
+            <td><p class='m-0'>".$dados[2]."</td>
+            <td><p class='m-0'>".$dados[3]."</td>
+            <td><p class='m-0'>".$dados[4]."</td>
             <td>
             <div cLASS='d-flex justify-content-end'>
                 <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#alterar' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
@@ -143,9 +143,9 @@ function BuscarPais()
             <td>".$dados[1]."</td>
             <td>
             <div class='d-flex justify-content-end'>
-                <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#alterar' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
+                <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#modAltPais' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
             </button>
-                <button class='btn btn-sm btn-danger pe-1 ps-2' data-bs-toggle='modal' data-bs-target='#excluir'  onclick='excluindo(this)'><p class='my-auto me-1'>Excluir <i class='ms-1 bi bi-trash3-fill' ></i></p>
+                <button class='btn btn-sm btn-danger pe-1 ps-2' data-bs-toggle='modal' data-bs-target='#modDelPais'  onclick='excluindo(this)'><p class='my-auto me-1'>Excluir <i class='ms-1 bi bi-trash3-fill' ></i></p>
             </button>
             </div>
             </td>
@@ -169,9 +169,9 @@ function BuscarEstado()
             <td>".$dados[3]."</td>
             <td>
             <div class='d-flex justify-content-end'>
-                <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#alterar' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
+                <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#modAltEstado' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
             </button>
-                <button class='btn btn-sm btn-danger pe-1 ps-2' data-bs-toggle='modal' data-bs-target='#excluir'  onclick='excluindo(this)'><p class='my-auto me-1'>Excluir <i class='ms-1 bi bi-trash3-fill' ></i></p>
+                <button class='btn btn-sm btn-danger pe-1 ps-2' data-bs-toggle='modal' data-bs-target='#modDelEstado'  onclick='excluindo(this)'><p class='my-auto me-1'>Excluir <i class='ms-1 bi bi-trash3-fill' ></i></p>
             </button>
             </div>
             </td>
@@ -183,22 +183,23 @@ function BuscarProduto()
 {
     include "conexao.php"; 
 
-    $comando = "select a.id_prod,a.nome_prod,a.preco_prod,a.quantidade_prod,b.nome_distri,c.nome_categ,b.id_distri,c.id_categ,a.descricao_prod
+    $comando = "select a.id_prod,a.imagem,a.nome_prod,a.preco_prod,a.quantidade_prod,b.nome_distri,c.nome_categ,b.id_distri,c.id_categ,a.descricao_prod
      from produto as a join distribuidora as b join categoria as c on a.cod_distri=b.id_distri and a.cod_categ=c.id_categ;";
     $pesquisa = mysqli_query($conexao,$comando);
     while($dados = mysqli_fetch_array($pesquisa))
     {
         echo"
         <tr data-distri=".$dados[6]." data-categ=".$dados[7].">
-            <td>".$dados[0]."</td>
-            <td>".$dados[1]."</td>
-            <td>".$dados[2]."</td>
-            <td>".$dados[3]."</td>
-            <td>".$dados[4]."</td>
-            <td>".$dados[5]."</td>
-            <td>".$dados[8]."</td>
+            <td><div class='divTd-100'><p>".$dados[0]."</p></div></td>
+            <td><img class='img-fluid' src='view/imagem/".$dados[1]."' alt='Imagem Produto'></td>
+            <td><div class='divTd-100'><p class='m-0 text-truncate-2l'>".$dados[2]."</p></div></td>
+            <td><div class='divTd-100'><p class='m-0'>".$dados[3]."</p></div></td>
+            <td><div class='divTd-100'><p class='m-0'>".$dados[4]."</p></div></td>
+            <td><div class='divTd-100'><p class='m-0'>".$dados[5]."</p></div></td>
+            <td><div class='divTd-100'><p class='m-0 text-truncate-1l'>".$dados[8]."</p></div></td>
+            <td><div class='divTd-100'><p class='m-0 text-truncate-2l'>".$dados[9]."</p></div></td>
             <td>
-            <div class='d-flex justify-content-end'>
+            <div class='divTd-100 justify-content-end'>
                 <button class='btn btn-sm btn-success pe-1 ps-2 me-2' data-bs-toggle='modal' data-bs-target='#alterar' onclick='alterarProduto(this)'><p class='my-auto me-1'>Editar <i class='ms-1 bi bi-pen-fill'></i></p>
             </button>
                 <button class='btn btn-sm btn-danger pe-1 ps-2' data-bs-toggle='modal' data-bs-target='#excluir'  onclick='excluindo(this)'><p class='my-auto me-1'>Excluir <i class='ms-1 bi bi-trash3-fill' ></i></p>
@@ -536,12 +537,12 @@ function BuscarCarrinho($e)
           </div>
         </td>
         <td>
-          <div class='align-items-center d-flex divBagBuy'>
+          <div class='align-items-center d-flex divTd-100'>
             <p class='m-0'>R$<span id='uniPreco'>".$dados[2]."</p>
           </div>
         </td>
         <td>
-          <div class='align-items-center d-flex divBagBuy qtdBagBuy'>
+          <div class='align-items-center d-flex divTd-100 qtdBagBuy'>
             <div class='rounded-pill d-flex align-items-center bg-grey-claro'>
               <button type='button' onClick='retirar(this)' class='btn py-1 px-2'>
                 <i class='bi bi-dash-lg '></i>
@@ -554,12 +555,12 @@ function BuscarCarrinho($e)
           </div>
         </td>
         <td>
-        <div class='align-items-center d-flex divBagBuy'>
+        <div class='align-items-center d-flex divTd-100'>
             <p class='m-0'>R$<span id='uniPreco'>".$dados[5]."</span></p>
           </div>
         </td>
         <td>
-          <div class='align-items-center d-flex divBagBuy '>
+          <div class='align-items-center d-flex divTd-100 '>
             <div>
               <button type='button' class='btn rounded-pill' onclick='remover(this)'>
                 <i class='bi bi-x-lg'></i>

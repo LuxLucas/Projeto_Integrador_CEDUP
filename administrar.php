@@ -17,7 +17,7 @@ include "php/comandos.php";
     <title>BeauTIful - Nome provisório</title>
   </head>
   <body>
-  <header class="mb-3 mb-md-4 mb-lg-5">
+  <header>
         <nav class="navbar stiky-top navbar-expand-sm navbar-light bg-light py-3" id="nav-superior">
             <div class="container d-flex justify-content-between">
                 <a href="index.php" class="navbar-brand">BeauTIful</a>
@@ -41,12 +41,20 @@ include "php/comandos.php";
         </nav>
     </header>
     <main>
-        <div class="container mt-5 d-flex align-items-center h-100">
-            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="container">
+            <div class="mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.php" class="text-primary">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Administração</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
                 <div class="col">
                     <div class="card cor-bg-dois m-auto">
                         <a href="escolha-produto.php" class="link-adm">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Produto</h5>
                                 <p>Gerencie informações referentes a produtos aqui.</p>
                             </div>
@@ -56,7 +64,7 @@ include "php/comandos.php";
                 <div class="col">
                     <div class="card cor-bg-cinco m-auto">
                         <a href="cupom.php" class="link-adm">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Cupom</h5>
                                 <p>Gerencie informações referentes a cupons aqui.</p>
                             </div>
@@ -66,7 +74,7 @@ include "php/comandos.php";
                 <div class="col">
                     <div class="card cor-bg-tres m-auto">
                         <a href="relatorio.php" class="link-adm">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Relatório</h5>
                                 <p>Adquira informações referentes a relatórios aqui.</p>
                             </div>
@@ -76,7 +84,7 @@ include "php/comandos.php";
                 <div class="col">
                     <div class="card cor-bg-um m-auto">
                         <a href="funcionario.php" class="link-adm">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Funcionário</h5>
                                 <p>Gerencie informações referentes a funcionários aqui.</p>
                             </div>
@@ -85,8 +93,8 @@ include "php/comandos.php";
                 </div>
                 <div class="col">
                     <div class="card cor-bg-cinco m-auto">
-                        <a href="escolha-endereco.php" class="link-adm">
-                            <div class="card-body">
+                        <a href="endereco.php" class="link-adm">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Endereço</h5>
                                 <p>Gerencie informações referentes a endereços aqui.</p>
                             </div>
@@ -96,7 +104,7 @@ include "php/comandos.php";
                 <div class="col">
                     <div class="card cor-bg-dois m-auto">
                         <a href="categoria.php" class="link-adm">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <h5 class="card-title">Categoria</h5>
                                 <p>Gerencie informações referentes a categorias aqui.</p>
                             </div>

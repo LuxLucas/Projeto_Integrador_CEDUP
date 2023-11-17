@@ -56,20 +56,20 @@ include "php/Selects.php";
               <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="index.php" class="text-primary">Home</a></li>
               <li class="breadcrumb-item"><a href="administrar.php" class="text-primary">Administração</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Administrar Produto</li>
+              <li class="breadcrumb-item"><a href="escolha-produto.php" class="text-primary">Administrar Produto</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Produto</li>
               </ol>
           </nav>
         </div>
 
-          <div>
-            <h2 class="title">
+          <div class="my-4">
+            <h1 class="title">
               Administrar Produto
-            </h2>
+            </h1>
           </div>
-          <hr>
           <div class="input-group input-group-sm d-flex justify-content-end">
             <button type="button" class="btn btn-sm btn-primary d-flex me-1 text-center" id="btnCadastro" data-bs-toggle='modal' data-bs-target='#mdCadastrar'>
-              <p class="me-1 my-1">Cadastrar Produto</p> <i class="fs-5 bi bi-plus-square"></i>
+              <p class="m-0">Cadastrar Produto <i class="fs-5 bi bi-plus-square"></i></p> 
             </button>
           </div>
           <hr>
@@ -82,13 +82,14 @@ include "php/Selects.php";
         <thead>
             <tr>
                 <th>ID</th>
+                <th>IMAGEM</th>
                 <th>NOME</th>
                 <th>PREÇO</th>
                 <th>QTD</th>
                 <th>DISTRIBUIDORA</th>
                 <th>CATEGORIA</th>
-                <th>DESCRICAO</th>
-                <th>AÇÕES</th>
+                <th>DESCRIÇÃO</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -104,12 +105,12 @@ include "php/Selects.php";
     <footer>
         
     </footer>
-
+<!-- MODAL CADASTRAR -->
     <div class="modal fade" id="mdCadastrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Cadastrar Produto</h1>
+            <h2 class="modal-title fs-4" id="staticBackdropLabel">Cadastrar Produto</h2>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form action="php/Cadastrar/cadastrarProduto.php" method="POST" enctype="multipart/form-data">
@@ -172,41 +173,43 @@ include "php/Selects.php";
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
           </div>
         </div>
 </form>
       </div>
   </div>
 
-
-    <div class="modal fade" id="excluir" tabindex="-1" aria-labelledby="excluirLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="excluirLabel">Excluir</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Voce deseja realmente excluir este item?</p>
-      </div>
-      <div class="modal-footer">
-      <button type="button" class="btn btn-primary">Excluir</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      </div>
+<!-- FIM. MODAL EXCLUIR -->
+<div class="modal fade" id="excluir" tabindex="-1" aria-labelledby="excluirLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="php/Excluir/excluirProduto.php" method="POST">
+              <div class="modal-body text-center">
+                <h2 class="fs-3 mb-3">ATENÇÃO</h2>
+                <p class="fs-5 m-auto">Você deseja realmente <span class="text-danger">excluir</span> este produto ?</p>
+                <input type='text' id='excluirID' class="d-flex-none" value='' name='id' hidden>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-outline-danger">Excluir</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
-  </div>
-</div>
-
-<div class="modal fade" id="alterar" tabindex="-1" aria-labelledby="alterarLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<!-- FIM. MODAL ALTERAR -->
+<div class="modal fade" id="alterar" tabindex="-1" data-bs-backdrop="static" aria-labelledby="alterarLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="alterarLabel">alterar</h1>
+        <h2 class="modal-title fs-4" id="alterarLabel">Alterar Produto</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
       <form action="php/Alterar/alterarProduto.php" method="POST" enctype="multipart/form-data">
           <div class="modal-body">
             <div class="row">
@@ -254,8 +257,9 @@ include "php/Selects.php";
 
               <div class="col-12">
                 <div class="mb-3">
-                  <label class="form-label" for="fotoProduto">Upload Imagem(apenas adicione algo se quiser muda a foto) </label>
+                  <label class="form-label" for="photo">Upload Imagem </label>
                   <input type="file" class="form-control" name="photo" id="foto">
+                  <p class="text-body-secondary text-end mt-1">(Apenas adicione algo se quiser mudar a foto)</p>
                 </div>
               </div>
 
@@ -268,12 +272,11 @@ include "php/Selects.php";
             </div>
       </div>
       <div class="modal-footer">
-      <button type="submit" class="btn btn-primary">alterar</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-primary">Alterar</button>
       </div>
     </div>
 </form>
-  </div>
 </div>
 
 <div class="modal" id="erro" data-erro=<?php VerificarErro()?> tabindex="-1" role="dialog">

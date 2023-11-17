@@ -46,37 +46,35 @@ include "php/Buscar.php";
         </nav>
     </header>
     <main>
-
-        
-
         <!--CONTAINER DO CONTEÚDO-->
         <div class="container">
-          <div class="mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php" class="text-primary">Home</a></li>
-                <li class="breadcrumb-item"><a href="administrar.php" class="text-primary">Administração</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Administrar Cupom</li>
-                </ol>
-            </nav>
-          </div>
-          <div class="my-4">
-            <h1>
-              Administrar Categoria
-            </h1>
-          </div>
+
+        <div class="mt-3">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php" class="text-primary">Home</a></li>
+              <li class="breadcrumb-item"><a href="administrar.php" class="text-primary">Administração</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Administrar País</li>
+              </ol>
+          </nav>
+        </div>
+
+        <h2>
+            Administrar País
+         </h2>
+         <hr>
           <div class="input-group d-flex justify-content-end">
-            <button type="button" class="btn btn-sm btn-primary d-flex me-1" id="btnCadastro" data-bs-toggle='modal' data-bs-target='#cadastro'>
-              <p class="m-0">Cadastrar Categoria <i class="ms-1 fs-5 bi bi-plus-square"></i></p>
+            <button type="button" class="btn btn-sm btn-primary d-flex me-1" id="btnCadPais" data-bs-toggle='modal' data-bs-target='#cadastro'>
+              <p class="me-1 my-1">Cadastrar Vendedor <i class="ms-1 fs-5 bi bi-plus-square"></i></p>
             </button>
           </div>
          <hr>
-
-        <!-- CONTAINER ENDEREÇO CORPO -->
-                <div class="endereco-body p-1 table-responsive mb-3">
+        
+        <!-- CONTAINER TABELA CORPO -->
+                <div class="container-table-body p-1 table-responsive mb-3">
                     
         <!-- TABELA -->
-                <table id='categoria' class="table table-striped nowrap">
+                <table id='pais' class="table table-striped nowrap">
                   <thead>
                       <tr>
                           <th>ID</th>
@@ -86,96 +84,98 @@ include "php/Buscar.php";
                   </thead>
                   <tbody>
                       <?php
-                      BuscarCategoria();
+                      BuscarPais();
                       ?>
                   </tbody>
                 </table>
               </div>
-          </div>
         </div>
     </main>
     <footer>
         
     </footer>
-<!-- MODAL EXCLUIR -->
-<div class="modal fade" id="excluir" tabindex="-1" aria-labelledby="excluirLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal fade" id="excluir" tabindex="-1" aria-labelledby="excluirLabel" aria-hidden="true">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+              <h1 class="modal-title fs-5" id="excluirLabel">Excluir</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="php/Excluir/excluirCategoria.php" method="POST">
-              <div class="modal-body text-center">
-                <h2 class="fs-3 mb-3">ATENÇÃO</h2>
-                <p class="fs-5 m-auto">Você deseja realmente <span class="text-danger">excluir</span> esta categoria ?</p>
-                <input type='text' id='excluirID' class="d-flex-none" value='' name='id' hidden>
+            <form action="php/Excluir/excluirPais.php" method="POST">
+              <div class="modal-body">
+                <p>Voce deseja realmente excluir este item?</p>
+                <input type='text' id='excluirID' value='' name='id' hidden>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-outline-danger">Excluir</button>
+                <button type="submit" class="btn btn-primary">Excluir</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
               </div>
             </form>
           </div>
         </div>
-    </div>
-<!-- FIM. MODAL ALTERAR -->
-      <div class="modal fade" data-bs-backdrop="static" id="alterar" tabindex="-1" aria-labelledby="alterarLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title fs-4" id="alterarLabel">Alterar Cupom</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-              <form action="php/Alterar/alterarCategoria.php" method="POST"> 
-                <div class="modal-body">
-                <input type='text' id='alterarCategoria' value='' hidden name='id'>
-                  <div class="col-sm-12">
-                      <label for="nome" class="form-label">Nome</label>
-                      <input type="text" class="form-control" name="nome" id="nomeCategoria" placeholder="Nome">
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-primary">Alterar</button>
-                </div>
-              </form>
-              </div>
-            </div>
-          </div>
-<!-- FIM. MODAL CADASTRAR -->
-      <div class="modal fade" id="cadastro" data-bs-backdrop="static" tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title fs-4" id="cadastrarLabel">Cadastrar Categoria</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-              <form action="php/Cadastrar/cadastrarCategoria.php" method="POST"> 
-                <div class="modal-body">
-                  <div class="col-12">
-                      <label for="nome" class="form-label">Nome</label>
-                      <input type="text" class="form-control" name="nome" id="nomeCategoria" placeholder="Nome">
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fechar</button>
-                  <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </div>
-              </form>
-              </div>
-            </div>
-          </div>
+      </div>
 
-<!-- FIM. MODAL DE ERRO -->
-<div class="modal" id="erro" data-erro=<?php VerificarErro()?> tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal fade" id="alterar" tabindex="-1" aria-labelledby="alterarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="alterarLabel">alterar</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <form action="php/Alterar/alterarPais.php" method="POST"> 
+                <div class="modal-body">
+                <div class="w-100 d-none d-lg-block"></div>
+                <input type='text' id='idPais' value='' hidden name='id'>
+                  <div class="col-sm-10 col-md-8 col-lg-6">
+                      <label for="nome" class="form-label">Nome</label>
+                      <input type="text" class="form-control" name="nome" id="nomePais" placeholder="Nome">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">alterar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </form>
+              </div>
+            </div>
+      </div>
+
+      <div class="modal fade" id="cadastro" tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="cadastrarLabel">Cadastrar País</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <form action="php/Cadastrar/cadastrarPais.php" method="POST"> 
+                <div class="modal-body">
+                  <div class="w-100 d-none d-lg-block"></div>
+                  <div class="col-sm-10 col-md-8 col-lg-10 mx-auto">
+                      <label for="nome" class="form-label">Nome</label>
+                      <input type="text" class="form-control" name="nome" id="nomePais" placeholder="Nome">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </form>
+              </div>
+            </div>
+      </div>
+
+          <div class="modal" id="erro" data-erro=<?php VerificarErro()?> tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title">Erro</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="modal-body text-center">
-        <h1 class="modal-title fs-4 mb-3">ERRO</h1>
-        <p id="texto_erro" class="m-0 fs-5"></p>
+      <div class="modal-body">
+        <p id="texto_erro"></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -183,12 +183,12 @@ include "php/Buscar.php";
     </div>
   </div>
 </div>
-<!-- FIM. -->
 
-  <!-- JavaScript -->
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-  <script src="js/valores.js"></script>
-  <script src="js/dataTable.js"></script>
-  <script src="js/jquery.mask.js"></script>
+    <!-- JavaScript -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="js/valores.js"></script>
+    <script src="js/dataTable.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/comandos.js"></script>
   </body>
 </html>

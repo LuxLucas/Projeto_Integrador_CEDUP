@@ -9,16 +9,16 @@ $resultados = mysqli_num_rows($pesquisa);
 if($resultados>0)
 {
     $_SESSION['erro'] = 8;
-    header("location:../../pais.php");
+    header("location:../../endereco.php");
 }else
 {
     $comando = "update pais set nome_pais='$nome' where id_pais=$id";
     if(mysqli_query($conexao, $comando)==true)
     {
-    header("location:../../pais.php");
+    header("location:../../endereco.php");
     }else{
         $_SESSION['erro'] = 2;
-        header("location:../../pais.php");
+        header("location:../../endereco.php");
     }
 }
 ?>

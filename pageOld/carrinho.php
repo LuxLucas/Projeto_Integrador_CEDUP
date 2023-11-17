@@ -82,7 +82,7 @@ $id = $_GET['id'];
                 <th>QTD</th>
                 <th>TOTAL</th>
                 <th>ESTOQUE</th>
-                <th>AÇÕES</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
