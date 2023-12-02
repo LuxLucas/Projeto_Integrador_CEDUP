@@ -1,9 +1,9 @@
 <?php
 $id = $_POST['id'];
 
-include "conexao.php";
+include "../conexao.php";
 
-$comando = "delete from cupom where id_cupom=$id";
+$comando = "UPDATE cupom set status_cupom=0 where id_cupom=$id;";
 mysqli_query($conexao,$comando);
-header("location:../cupom.php");
+header("location:../../cupom");
 ?>

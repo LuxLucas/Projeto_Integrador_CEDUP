@@ -5,8 +5,9 @@ $codigo2 = $_POST['codigo'];
 
 if($codigo1==$codigo2)
 {
-    header("location:../redefinirSenha.php");
+    header("location:../redefinirSenha");
 }else{
-    header("location:../inserirCodigo.php");
+    header("location:../codigo_recuperar");
+    $_SESSION['erro'] = 15;
 }
 ?>

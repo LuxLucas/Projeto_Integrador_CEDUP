@@ -1,8 +1,11 @@
 <?php
 $id = $_POST['id'];
+
 include "../conexao.php";
 
-$comando = "delete from categoria where id_categ=$id";
+$comando = "UPDATE categoria set status_categ=0 where id_categ=$id;";
 mysqli_query($conexao,$comando);
-header("location:../../categoria.php");
+$comando = "UPDATE produto set status_prod=0 where cod_categ=$id;";
+mysqli_query($conexao,$comando);
+header("location:../../categoria");
 ?>

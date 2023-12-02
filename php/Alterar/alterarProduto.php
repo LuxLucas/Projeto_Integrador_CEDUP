@@ -1,10 +1,10 @@
 <?php
 session_start();
 $id = $_POST['id'];
-$nome = $_POST['nome'];
-$preco = $_POST['preco'];
-$quantidade = $_POST['quantidade'];
-$descricao = $_POST['descricao'];
+$nome = trim($_POST['nome']);
+$preco = trim($_POST['preco']);
+$quantidade = trim($_POST['quantidade']);
+$descricao = trim($_POST['descricao']);
 $categoria = $_POST['categoria'];
 $distribuidora = $_POST['distribuidora'];
 $imagem = $_FILES["photo"]["name"];
@@ -22,7 +22,7 @@ $caminho = "../../view/imagem/". $_FILES['photo']['name'];
     cod_distri=$distribuidora,cod_categ=$categoria,imagem='$imagem' where id_prod=$id";
     }else{
         $_SESSION['erro'] = 7;
-        header("location:../../produto.php");
+        header("location:../../produto");
     }
 }else
 {
@@ -32,9 +32,9 @@ $caminho = "../../view/imagem/". $_FILES['photo']['name'];
 }
 if(mysqli_query($conexao, $comando)==true)
 {
-header("location:../../produto.php");
+header("location:../../produto");
 }else{
     $_SESSION['erro'] = 2;
-    header("location:../../produto.php");
+    header("location:../../produto");
 }
 ?>

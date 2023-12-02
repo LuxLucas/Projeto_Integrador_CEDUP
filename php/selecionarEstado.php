@@ -1,12 +1,13 @@
 <?php
-$pais = $_POST['pais'];
-$texto = "";
 include "conexao.php";
-$comando = "select a.id_est,a.sigla_est from estado as a join pais as b where a.cod_pais=$pais and a.cod_pais=b.id_pais";
+$pais =$_POST['pais'];
+$comando = "select * from estado where cod_pais=$pais and status_est=1 order by nome_est";
 $pesquisa = mysqli_query($conexao,$comando);
+$retorno='<option value=0>Selecionar</option>';
 while($dados = mysqli_fetch_array($pesquisa))
 {
-$texto = $texto."<option value=".$dados[0].">".$dados[1]."</option>";
+
+        $retorno=$retorno. "<option value='".$dados[0]."'>".$dados[1]."</option>";
 }
-echo $texto;
+echo $retorno;
 ?>

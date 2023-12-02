@@ -1,9 +1,9 @@
 <?php
 $id = $_POST['id'];
 
-include "conexao.php";
+include "../conexao.php";
 
-$comando = "delete from produto where id_prod=$id";
+$comando = "UPDATE produto set status_prod=0 where id_prod=$id;";
 mysqli_query($conexao,$comando);
-header("location:../produto.php");
+header("location:../../produto");
 ?>
