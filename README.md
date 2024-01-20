@@ -1,3 +1,3 @@
 # This is Beautiful...
-Beautiful é um projeto feito para minha conclusão de curso no CEDUP (uma escola de ensino médio com curso tecnico integrado) 
+Beautiful é um projeto feito para minha conclusão de curso no CEDUP (uma escola de ensino médio profissionalizante)
 em parceria com Jhoni Cauan Freitas Elias, o qual se responsabilizou pelo Back-end e eu do Front-end, com ajuda de Bootstrap.
